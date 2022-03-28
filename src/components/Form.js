@@ -105,15 +105,19 @@ function Form() {
               </div>
 
               <div class="mb-6">
-              <label for="multipleInputs" class="form-label inline-block mb-2 text-gray-700">Related images/videos</label>
+                <label
+                  for="multipleInputs"
+                  class="form-label inline-block mb-2 text-gray-700"
+                >
+                  Related images/videos
+                </label>
                 <input
-                    type="file" 
-                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-                    id="multipleInputs"
-                    placeholder="Choose Files" 
-                    multiple
-                  />
-
+                  type="file"
+                  class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
+                  id="multipleInputs"
+                  placeholder="Choose Files"
+                  multiple
+                />
               </div>
 
               <div class="text-center lg:text-left">
