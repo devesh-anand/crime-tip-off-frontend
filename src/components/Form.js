@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 function Form(){
@@ -11,11 +11,7 @@ function Form(){
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ category, description, photos: ["sdf" ,"sdf"], location:{
-          lat:"233",
-          long:"4ree",
-          city: "Delhi"
-        }, date: "sdfds" })
+        body: JSON.stringify({ category, description, photos: ["sdf" ,"sdf"], location:userLocation, date: new Date().getTime().toString() })
     };
 
     // console.log((requestOptions));
@@ -47,6 +43,30 @@ function Form(){
         )
         .then(data => console.log(data));
     }
+
+  const [userLocation, setUserLocation] = useState({})
+
+  useEffect(()=>{
+    async function fetchIPinfo() {
+      await fetch("https://ipinfo.io/182.73.154.2/?token=26e23a2e78a518")
+        .then((res)=> res.json())
+        .then((data)=>setUserLocation({
+          lat: data.loc.split(',')[0],
+          lng: data.loc.split(',')[1],
+          city: data.city
+        }))
+    }
+
+    console.log(userLocation);
+
+    fetchIPinfo();
+    return () => {
+      fetchIPinfo()
+    }
+  },[])
+
+  
+
 
     return(
         <section class="h-screen flex place-self-center mt-32 md:mt-0" id="form">

@@ -2,7 +2,7 @@ import "./App.css";
 import "./App.css";
 import MainImg from "./MainImg";
 import Form from "./components/Form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [clicked, setClicked] = useState(false);
+  
 
   return (
     <div className="App">
