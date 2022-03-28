@@ -15,12 +15,22 @@ function Signup() {
 
     try {
       const response = await axios.post(
-        "https://crime-tip-off.herokuapp.com/api/users/",
+        // "https://crime-tip-off.herokuapp.com/api/users/",
+        "http://localhost:5000/api/users/",
         { email, password, aadhar: aadhaar, aadharFile: previewSource }
       );
 
       console.log(response.data);
       if (response.data) {
+        toast.success("Successfully registered!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       }
     } catch (error) {
       const message =
@@ -95,26 +105,7 @@ function Signup() {
             />
           </div>
 
-          {/* <div className="mb-6">
-            <label
-              for="aadhaarImg"
-              class="form-label inline-block mb-2 text-gray-700"
-            >
-              Photo of aadhaar
-            </label>
-            <input
-              type="file"
-              value={aadhaarImg}
-              name="aadhaarImg"
-              class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
-              id="aadhaarImg"
-              placeholder="Aadhaar image"
-              onChange={(e) => setAadhaarImg(e.target.value)}
-              required
-            />
-          </div> */}
-
-          <div className="flex w-full  mt-2 bg-grey-lighter mb-2">
+          <div className="flex w-full  mt-2 bg-grey-lighter mb-2 ">
             <label className="w-full flex flex-col items-center px-4 py-6 bg-[#c1f1fd] text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue md:hover:text-white">
               <svg
                 className="w-8 h-8"
@@ -127,11 +118,12 @@ function Signup() {
               <span className="mt-2 text-base leading-normal">Choose File</span>
               <input
                 type="file"
-                id="logo"
-                name="logo"
+                id="aadharFile"
+                name="aadharFile"
                 className="hidden"
                 onChange={handleFileInputChange}
                 value={fileInputState}
+                // required
               />
             </label>
           </div>
@@ -141,7 +133,7 @@ function Signup() {
 
           <button
             type="submit"
-            className="inline-block px-7 py-3 bg-orange-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-orange-500 hover:shadow-lg focus:bg-orange-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-600 active:shadow-lg transition duration-150 ease-in-out w-full"
+            className="inline-block px-7 py-3 mt-2 bg-orange-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-orange-500 hover:shadow-lg focus:bg-orange-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-600 active:shadow-lg transition duration-150 ease-in-out w-full"
             data-mdb-ripple="true"
             data-mdb-ripple-color="light"
           >
