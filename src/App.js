@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/heatmap" element={<Heatmap />} />
+          {/* <Route path="/heatmap" element={<Heatmap />} /> */}
           {/* <Route path="/policedashboard" element={<PoliceDashboard />} /> */}
         </Routes>
       </BrowserRouter>

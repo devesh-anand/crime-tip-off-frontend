@@ -7,6 +7,8 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [aadhaar, setAadhaar] = useState("");
   const [aadhaarImg, setAadhaarImg] = useState("");
+  const [previewSource, setPreviewSource] = useState("");
+  const [fileInputState, setFileInputState] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -14,7 +16,7 @@ function Signup() {
     try {
       const response = await axios.post(
         "https://crime-tip-off.herokuapp.com/api/users/",
-        { email, password, aadhar: aadhaar, aadharFile: aadhaarImg }
+        { email, password, aadhar: aadhaar, aadharFile: previewSource }
       );
 
       console.log(response.data);
@@ -40,6 +42,20 @@ function Signup() {
         progress: undefined,
       });
     }
+  };
+
+  const handleFileInputChange = (e) => {
+    const file = e.target.files[0];
+    previewFile(file);
+  };
+
+  const previewFile = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setPreviewSource(reader.result);
+      // setFormData((prevData) => ({ ...prevData, logo: reader.result }));
+    };
   };
 
   return (
@@ -79,7 +95,7 @@ function Signup() {
             />
           </div>
 
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <label
               for="aadhaarImg"
               class="form-label inline-block mb-2 text-gray-700"
@@ -96,7 +112,32 @@ function Signup() {
               onChange={(e) => setAadhaarImg(e.target.value)}
               required
             />
+          </div> */}
+
+          <div className="flex w-full  mt-2 bg-grey-lighter mb-2">
+            <label className="w-full flex flex-col items-center px-4 py-6 bg-[#c1f1fd] text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue md:hover:text-white">
+              <svg
+                className="w-8 h-8"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+              </svg>
+              <span className="mt-2 text-base leading-normal">Choose File</span>
+              <input
+                type="file"
+                id="logo"
+                name="logo"
+                className="hidden"
+                onChange={handleFileInputChange}
+                value={fileInputState}
+              />
+            </label>
           </div>
+          {previewSource && (
+            <img src={previewSource} alt="chosen" style={{ height: "200px" }} />
+          )}
 
           <button
             type="submit"
