@@ -2,7 +2,7 @@ import React from 'react';
 
 function Form(){
     return(
-        <section class="h-screen flex place-self-center" id="form">
+        <section class="h-screen flex place-self-center mt-32 md:mt-0" id="form">
         <div class="h-full text-gray-800">
           <div class="flex justify-self-center md:mt-32 flex-wrap h-full g-6">
             <div class="xl:ml-4 w-full mb-12 md:mb-0">

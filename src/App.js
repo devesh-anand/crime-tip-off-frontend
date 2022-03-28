@@ -1,4 +1,5 @@
 import "./App.css";
+import "./App.css";
 import MainImg from "./MainImg";
 import Navbar from "./Navbar";
 import Form from "./Form";
@@ -13,8 +14,8 @@ function App() {
     <div className="App">
         <Navbar />
 
-        <div className="flex flex-col justify-center items-center md:flex-row px-16 py-16 h-full">
-          <div className="flex flex-col justify-center basis-1/2 pb-16 lg:pl-16 lg:-ml-20">
+        <div className="flex flex-col justify-center items-center md:flex-row px-16 py-16">
+          <div className="flex flex-col h-screen justify-center md:basis-1/2 pb-16 lg:pl-16 lg:-ml-20">
             <h1 className="text-4xl lg:text-5xl leading-normal lg:leading-snug font-normal">
               Tip-off crime related information <br />
               <span className="text-orange-400 font-bold italic">
