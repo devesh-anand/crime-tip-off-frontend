@@ -1,13 +1,13 @@
 import "./App.css";
 import "./App.css";
 import MainImg from "./MainImg";
-import Navbar from "./Navbar";
-import Form from "./Form";
+import Form from "./components/Form";
 import { useState } from "react";
-
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
-
   const [clicked, setClicked] = useState(false);
 
   return (
@@ -43,7 +43,15 @@ function App() {
           </div>
           
         </div>
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/login" element={<Login />} /> */}
 
+          {/* <Route path="invoices" element={<Invoices />} /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
