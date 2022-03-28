@@ -40,25 +40,6 @@ function Signup() {
         progress: undefined,
       });
     }
-
-    // .then((response) => {
-    //   response.json();
-    //   if (response.status === 201) {
-    //     toast.success("Sign-up Successful", {
-    //       position: "top-center",
-    //       autoClose: 5000,
-    //       hideProgressBar: false,
-    //       closeOnClick: true,
-    //       pauseOnHover: true,
-    //       draggable: true,
-    //       progress: undefined,
-    //     });
-    //   } else {
-    //     console.log(response);
-    //
-    //   }
-    // })
-    // .then((data) => console.log(data));
   };
 
   return (

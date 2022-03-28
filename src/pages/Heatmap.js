@@ -23,16 +23,9 @@ const Heatmap = (props) => {
   }
 
   const heatMapData = {
-    positions: [
-      { lat: 28.6786794810425, lng: 77.26151170601337 },
-      { lat: 28.677718522771112, lng: 77.26122447557762 },
-      { lat: 28.67788158809669, lng: 77.25997174564884 },
-      { lat: 28.678743875418736, lng: 77.26281848813903 },
-
-      { lat: 28.680277544245573, lng: 77.26069274000719 },
-    ],
+    positions: props.heatmapDataPosition,
     options: {
-      radius: 20,
+      radius: 10,
       opacity: 0.6,
     },
   };
@@ -52,7 +45,7 @@ const Heatmap = (props) => {
 
   return (
     // Important! Always set the container height explicitly
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div style={{ height: "50vh", width: "100%" }}>
       <GoogleMapReact
         // ref={(el) => (this._googleMap = el)}
         bootstrapURLKeys={"AIzaSyAY3hshDA-xeK7ME1UY3HDBdNAAv8UIO3k"}
