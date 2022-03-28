@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 function Form(){
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState("kidnapping");
     const [description, setDescription] = useState("");
     const [files, setFiles] = useState([]);
 
@@ -10,10 +11,40 @@ function Form(){
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ category, description, files })
+        body: JSON.stringify({ category, description, photos: ["sdf" ,"sdf"], location:{
+          lat:"233",
+          long:"4ree",
+          city: "Delhi"
+        }, date: "sdfds" })
     };
+
+    // console.log((requestOptions));
       fetch('https://crime-tip-off.herokuapp.com/api/tipoff/', requestOptions)
-        .then(response => response.json())
+        .then(response => {
+          if(response.status === 201){
+            toast.success('Successfully tipped off!', {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              });
+          }else {
+            toast.error('Failed to tip off!', {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              });
+          }
+          response.json();
+        }
+        )
         .then(data => console.log(data));
     }
 

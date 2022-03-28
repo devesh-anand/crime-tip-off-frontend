@@ -6,6 +6,8 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [clicked, setClicked] = useState(false);
@@ -43,15 +45,13 @@ function App() {
           </div>
           
         </div>
-      <Navbar />
+      {/* <Navbar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/login" element={<Login />} /> */}
-
-          {/* <Route path="invoices" element={<Invoices />} /> */}
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <ToastContainer />
     </div>
   );
 }
