@@ -51,7 +51,8 @@ const HeatmapDashboard = () => {
 
   return (
     <div>
-      <div class="mb-6">
+      <div class="mb-6 w-full flex justify-center items-center mt-4">
+        <div>Group by: &nbsp;</div>
         <select
           className="form-control block  px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
           id="category"
@@ -65,7 +66,7 @@ const HeatmapDashboard = () => {
           <option value="others">Others</option>
         </select>
       </div>
-      <div class="max-w-lg  m-4">
+      <div class="w-4xl h-5/6 mx-auto m-4">
         <Heatmap heatmapDataPosition={heatmapDataPositionState} />
       </div>
     </div>

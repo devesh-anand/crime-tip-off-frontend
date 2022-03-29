@@ -1,29 +1,27 @@
 import "./App.css";
-import "./App.css";
 import MainImg from "./MainImg";
 import Form from "./components/Form";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Heatmap from "./pages/Heatmap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./pages/Dashboard";
 import MultipleLineChart from "./components/MultipleLineChart";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 // import PoliceDashboard from "./pages/PoliceDashboard";
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar />
-      <Signup />
-      <Login /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
           {/* <Route path="/heatmap" element={<Heatmap />} /> */}
           {/* <Route path="/policedashboard" element={<PoliceDashboard />} /> */}
