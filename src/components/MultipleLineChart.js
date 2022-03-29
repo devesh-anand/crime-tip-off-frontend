@@ -68,7 +68,7 @@ export const data = {
 
 const MultipleLineChart = () => {
   return (
-    <div className="h-screen px-10">
+    <div className="h-screen px-10 overflow-hidden">
       <h2 className="pt-10 pb-20 text-2xl font-semibold">Crime Chart of Year 2021</h2>
       <Chart type="bar" data={data} />
     </div>
