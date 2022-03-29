@@ -5,6 +5,7 @@ import PieChart from "../components/PieChart";
 import ReportTables from "../components/ReportTables";
 import Heatmap from "./Heatmap";
 import HeatmapDashboard from "./HeatmapDashboard";
+import postitions from "../data/fake_lat_lng";
 import Table, {
   AvatarCell,
   SelectColumnFilter,
