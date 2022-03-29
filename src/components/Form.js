@@ -94,14 +94,14 @@ function Form() {
   }, []);
 
   return (
-    <section className="h-screen flex place-self-center mt-32 md:mt-0" id="form">
+    <section className="h-screen flex w-screen justify-center items-center place-self-center mt-32 md:mt-0" id="form">
       <div className="h-full text-gray-800">
         <div className="flex justify-self-center md:mt-32 flex-wrap h-full g-6">
           <div className="xl:ml-4 w-full mb-12 md:mb-0">
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
                 <select
-                  classNameName="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
+                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
                   id="info"
                   name="info"
                   value={category}
