@@ -39,7 +39,7 @@ export const data = {
 
 const PieChart = () => {
   return (
-    <div className="max-w-2xl mx-auto flex flex-col justify-center items-center overflow-scroll"
+    <div className="max-w-xl mx-auto flex flex-col justify-center items-center overflow-scroll"
       style={{
         width: "100%",
         height: "100%",
