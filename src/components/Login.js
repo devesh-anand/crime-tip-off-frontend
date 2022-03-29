@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 
-function Login(){
+function LoginComp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -32,7 +33,7 @@ function Login(){
           </div>
 
           <div className="mb-6">
-            <p class="italic text-gray-700">Make sure you have signed up</p>
+            <p class="italic text-gray-700">Make sure you have <Link className='underline text-orange-600' to='/signup'>signed up</Link></p>
           </div>
 
           <button
@@ -50,4 +51,4 @@ function Login(){
     );
 }
 
-export default Login;
+export default LoginComp;

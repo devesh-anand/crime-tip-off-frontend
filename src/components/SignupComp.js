@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-function Signup() {
+function SignupComp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [aadhaar, setAadhaar] = useState("");
@@ -147,4 +147,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignupComp;
