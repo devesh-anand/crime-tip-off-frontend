@@ -1,6 +1,6 @@
 import "./App.css";
 import MainImg from "./MainImg";
-import Form from "./components/Form";
+import Formdata from "./pages/Formdata";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -22,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/tipoff" element={<Formdata />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
           {/* <Route path="/heatmap" element={<Heatmap />} /> */}
           {/* <Route path="/policedashboard" element={<PoliceDashboard />} /> */}

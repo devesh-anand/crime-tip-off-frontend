@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { Link } from 'react-router-dom'
 import axios from "axios";
 
 function SignupComp() {
@@ -71,7 +72,7 @@ function SignupComp() {
   return (
     <div className="flex justify-center">
       <div className="w-9/12 md:w-7/12 lg:w-5/12 mt-32">
-        <form onSubmit={handleSubmit}>
+        <form >
           <div className="mb-6">
             <input
               type="email"
@@ -96,9 +97,9 @@ function SignupComp() {
 
           <div className="mb-6">
             <input
-              type="number" 
-              minLength="12" 
-              maxLength="12" 
+              type="number"
+              minLength="12"
+              maxLength="12"
               value={aadhaar}
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-orange-600 focus:outline-none"
               placeholder="Aadhaar"
@@ -125,22 +126,22 @@ function SignupComp() {
                 className="hidden"
                 onChange={handleFileInputChange}
                 value={fileInputState}
-                // required
+              // required
               />
             </label>
           </div>
           {previewSource && (
             <img src={previewSource} alt="chosen" style={{ height: "200px" }} />
           )}
-
-          <button
-            type="submit"
-            className="inline-block px-7 py-3 mt-2 bg-orange-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-orange-500 hover:shadow-lg focus:bg-orange-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-600 active:shadow-lg transition duration-150 ease-in-out w-full"
-            data-mdb-ripple="true"
-            data-mdb-ripple-color="light"
-          >
-            Sign up
-          </button>
+          <Link to='/tipoff'>
+            <button
+              type="submit"
+              className="inline-block px-7 py-3 mt-2 bg-orange-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-orange-500 hover:shadow-lg focus:bg-orange-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-600 active:shadow-lg transition duration-150 ease-in-out w-full"
+              data-mdb-ripple="true"
+              data-mdb-ripple-color="light"
+            >
+              Sign up
+            </button></Link>
         </form>
       </div>
     </div>
