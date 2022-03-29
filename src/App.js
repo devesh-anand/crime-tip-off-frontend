@@ -3,6 +3,7 @@ import MainImg from "./MainImg";
 import Form from "./components/Form";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Heatmap from "./pages/Heatmap";
 import { ToastContainer, toast } from "react-toastify";
