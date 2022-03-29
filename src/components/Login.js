@@ -31,6 +31,10 @@ function Login(){
             />
           </div>
 
+          <div className="mb-6">
+            <p class="italic text-gray-700">Make sure you have signed up</p>
+          </div>
+
           <button
             type="submit"
             className="inline-block px-7 py-3 bg-orange-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-orange-500 hover:shadow-lg focus:bg-orange-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-600 active:shadow-lg transition duration-150 ease-in-out w-full"
